@@ -36,7 +36,7 @@ class _LoginViewState extends State<LoginView> {
                               var loginsuccess =
                                   await model.login(_controller.text);
                               if (loginsuccess) {
-                                Navigator.pushNamed(context, '');
+                                Navigator.pushNamed(context, '/');
                               }
                             },
                             style: ElevatedButton.styleFrom(

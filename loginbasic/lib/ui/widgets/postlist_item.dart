@@ -9,7 +9,9 @@ class PostListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap(),
+      onTap: () {
+        onTap();
+      },
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
         padding: EdgeInsets.all(10.0),
