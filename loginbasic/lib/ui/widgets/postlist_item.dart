@@ -14,7 +14,7 @@ class PostListItem extends StatelessWidget {
       },
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
-        padding: EdgeInsets.all(10.0),
+        padding: EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 10),
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(5.0),

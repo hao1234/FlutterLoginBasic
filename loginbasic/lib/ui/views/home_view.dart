@@ -20,8 +20,7 @@ class HomeView extends StatelessWidget {
       onModelReady: (model) {
         model.getPosts(Provider.of<User>(context).id);
       },
-      builder: (context, model, child) => SafeArea(
-        child: Scaffold(
+      builder: (context, model, child) => Scaffold(
           backgroundColor: backgroundColor,
           body: model.state == ViewState.Busy
               ? Center(child: CircularProgressIndicator(),)
@@ -37,14 +36,12 @@ class HomeView extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 20.0),
                 child: Text('Here are all your posts', style: subHeaderStyle,),
               ),
-              UIHelper.verticalSpaceLarge(),
               model.posts.isEmpty
                   ? Expanded(child: Text(''))
                   : Expanded(child: getPostsUI(model.posts))
             ],
           )
-        ),
-      ),
+      )
     );
   }
 
@@ -54,7 +51,7 @@ class HomeView extends StatelessWidget {
       return PostListItem(
         post: posts[index],
         onTap: () {
-          Navigator.pushNamed(context, '/post');
+          Navigator.pushNamed(context, '/post', arguments: posts[index]);
         },
       );
     }

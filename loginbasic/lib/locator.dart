@@ -4,6 +4,7 @@ import 'package:loginbasic/core/services/authentication_service.dart';
 import 'package:loginbasic/core/viewmodels/home_model.dart';
 
 import 'core/viewmodels/login_viewmodel.dart';
+import 'core/viewmodels/post_model.dart';
 
 GetIt locator = GetIt.instance;
 
@@ -13,5 +14,6 @@ void setupLocator() {
   locator.registerLazySingleton(() => Api());
 
   locator.registerFactory(() => HomeModel());
+  locator.registerFactory(() => PostModel());
 }
 
